@@ -29,6 +29,9 @@
             padding-bottom: 10px;
             position: sticky;
             top: 0;
+            z-index: 9999;
+            box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.5);
+            /* box-shadow: X偏移 Y偏移  */
         }
         nav li{
             list-style: none;
@@ -75,11 +78,37 @@
             transform: translateY(-40%);
             /* transform可以透過百分比控制 */
         }
+        #news{
+            padding-bottom: 50px;
+            background-image: linear-gradient( 135deg, #FFD3A5 10%, #FD6585 100%);
+        }
         #info {
             justify-content: center;
         }
-        #info .col-9{
+        /* #info .col-9{
             background-color: #ccc;
+        } */
+        .info-item i{
+            margin: 5px 0;
+        }
+        #info h2{
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .info-item i{
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-color: #fa0;
+            text-align: center;
+            line-height: 50px;
+            /* vertical-alig */
+            /* border-radius: 50%; */
+            clip-path: circle();
+        }
+        footer p{
+            line-height: 50px;
+            text-align: center;
         }
     </style>
 </head>
@@ -118,21 +147,53 @@
         <div class="fix-width row" id="info">
             <div class="col-9 row">
                 <div class="col-12">
-                    <h2>title</h2>
+                    <h2>孜孜原味快樂頌</h2>
                 </div>
                 <div class="col-7 row">
-                    <div class="col-4">
-                        <i class="fa-solid fa-bullhorn fa-xl"></i>
+                    <div class="col-4 info-item">
+                        <i class="fa-solid fa-bullhorn fa-lg"></i>
                         TEXT
                     </div>
-                    <div class="col-4">
-                        <i class="fa-solid fa-circle-info fa-xl"></i>
+                    <div class="col-4 info-item">
+                        <i class="fa-solid fa-circle-info fa-lg"></i>
+                        TEXT
+                    </div>
+                    <div class="col-4 info-item">
+                        <i class="fa-solid fa-bullhorn fa-lg"></i>
+                        TEXT
+                    </div>
+                    <div class="col-4 info-item">
+                        <i class="fa-solid fa-circle-info fa-lg"></i>
+                        TEXT
+                    </div>
+                    <div class="col-4 info-item">
+                        <i class="fa-solid fa-bullhorn fa-lg"></i>
+                        TEXT
+                    </div>
+                    <div class="col-4 info-item">
+                        <i class="fa-solid fa-circle-info fa-lg"></i>
+                        TEXT
+                    </div>
+                    <div class="col-4 info-item">
+                        <i class="fa-solid fa-bullhorn fa-lg"></i>
+                        TEXT
+                    </div>
+                    <div class="col-4 info-item">
+                        <i class="fa-solid fa-circle-info fa-lg"></i>
                         TEXT
                     </div>
                 </div>
-                <div class="col-5"></div>
+                <div class="col-5">
+                    <h3>營業時間</h3>
+                    <div>11:30~14:30 最後點餐時間14:00</div>
+                    <div>16:30~20:30 最後點餐時間20:00</div>
+                    <a href="#"><i class="fa-brands fa-facebook fa-lg"></i></a>
+                </div>
             </div>
         </div>
     </div>
+    <footer class="full-width">
+        <p>© 2021 Wowprime.Corp. All rights reserved.</p>
+    </footer>
 </body>
 </html>
