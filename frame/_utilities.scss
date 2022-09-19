@@ -1,0 +1,94 @@
+@each $name,$width in $breakpoints {
+    @media(min-width: $width){
+        @each $display in $displays{
+            @if($width == 0){
+                .d-#{$display}{
+                    display: $display;
+                }
+            }@else{
+                .d-#{$name}-#{$display}{
+                    display: $display;
+                }
+            }
+        }
+        @each $jc in $justifyContent{
+            @if($width == 0){
+                .jc-#{$jc}{
+                    justify-content: $jc;
+                }
+            }@else{
+                .jc-#{$name}-#{$jc}{
+                    justify-content: $jc;
+                }
+            }
+        }
+        @each $ai in $alignItems{
+            @if($width == 0){
+                .ai-#{$ai}{
+                    align-items: $ai;
+                }
+            }@else{
+                .ai-#{$name}-#{$ai}{
+                    align-items: $ai;
+                }
+            }
+        }
+        @each $align in $aligns{
+            @if($width == 0){
+                .t-#{$align}{
+                    text-align: $align;
+                }
+            }@else{
+                .t-#{$name}-#{$align}{
+                    text-align: $align;
+                }
+            }
+        }
+        @each $direction,$dire in $directions{
+            @for $i from 1 through 10{
+                @if($width == 0){
+                    .m#{$dire}-#{$i}{
+                        margin-#{$direction}: $spacing * $i;
+                    }
+                    .mx-#{$i}{
+                        margin-left: $spacing * $i;
+                        margin-right: $spacing * $i;
+                    }
+                    .p#{$dire}-#{$i}{
+                        padding-#{$direction}: $spacing * $i;
+                    }
+                    .px-#{$i}{
+                        padding-left: $spacing * $i;
+                        padding-right: $spacing * $i;
+                    }
+                }@else{
+                    .m#{$dire}-#{$name}-#{$i}{
+                        margin-#{$direction}: $spacing * $i;
+                    }
+                    .mx-#{$name}-#{$i}{
+                        margin-left: $spacing * $i;
+                        margin-right: $spacing * $i;
+                    }
+                    .p#{$dire}-#{$name}-#{$i}{
+                        padding-#{$direction}: $spacing * $i;
+                    }
+                    .px-#{$name}-#{$i}{
+                        padding-left: $spacing * $i;
+                        padding-right: $spacing * $i;
+                    }
+                }
+            }
+        }
+        @each $position in $positions{
+            @if($width == 0){
+                .position-#{$position}{
+                    position: $position;
+                }
+            }@else{
+                .position-#{$name}-#{$position}{
+                    position: $position;
+                }
+            }
+        }
+    }
+}
