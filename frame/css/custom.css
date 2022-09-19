@@ -48,6 +48,29 @@ nav .row {
         flex-direction: row;
     }
 }
+nav li {
+    text-align: center;
+}
+.menu > li{
+    position: relative;
+}
+.dropdown-menu{
+    display: none;
+    background-color: rgb(67, 67, 67);
+    position: absolute;
+    width: 300px;
+    /* width: 100%; */
+    /* left: 0; */
+    flex-direction: column;
+}
+nav a:hover + .dropdown-menu{
+    display: flex;
+    animation: fade-in 1s;
+}
+@keyframes fade-in {
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
 header {
     height: 400px;
 }
