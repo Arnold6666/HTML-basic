@@ -8,6 +8,43 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body>
-    
+    <div id="app">
+        <h1>{{ title }} {{number}}</h1>
+        <p>{{number}}</p>
+        <img :src="image" :alt="title" :title="text">
+    </div>
+    <script>
+        // Vue.createApp({
+        //     data(){
+        //         return {
+        //             title: 'Qwerty',
+        //             number: 100
+        //         }
+        //     }
+        // })
+        // const { createApp } = Vue
+
+        // createApp({
+        //     data() {
+        //         return {
+        //             title: 'Qwerty',
+        //             number: 100
+        //         }
+        //     }
+        // }).mount('#app')
+
+        const app = Vue.createApp({
+            data() {
+                return {
+                    title: 'Qwerty',
+                    number: 100,
+                    image: 'https://picsum.photos/id/45/300',
+                    text:'Picsum Photos'
+                }
+            }
+        });
+        
+        app.mount('#app')
+    </script>
 </body>
 </html>
