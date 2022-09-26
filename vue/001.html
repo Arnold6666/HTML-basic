@@ -11,35 +11,22 @@
     <div id="app">
         <h1>{{ title }} {{number}}</h1>
         <p>{{number}}</p>
+        <ul>
+            <li v-for="(drink,idx) in drinks">{{drink}} -- {{idx}}</li>
+            <!-- <li v-for="drink of drinks">{{drink}}</li> -->
+        </ul>
+        <div v-for="drink of drinks">{{drink}}</div>
         <img :src="image" :alt="title" :title="text">
     </div>
     <script>
-        // Vue.createApp({
-        //     data(){
-        //         return {
-        //             title: 'Qwerty',
-        //             number: 100
-        //         }
-        //     }
-        // })
-        // const { createApp } = Vue
-
-        // createApp({
-        //     data() {
-        //         return {
-        //             title: 'Qwerty',
-        //             number: 100
-        //         }
-        //     }
-        // }).mount('#app')
-
         const app = Vue.createApp({
             data() {
                 return {
                     title: 'Qwerty',
                     number: 100,
                     image: 'https://picsum.photos/id/45/300',
-                    text:'Picsum Photos'
+                    text:'Picsum Photos',
+                    drinks: ['紅茶','綠茶','拿鐵','冰淇淋紅茶']
                 }
             }
         });

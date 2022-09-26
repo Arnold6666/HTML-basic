@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-if="onsale">特價999</div>
+        <div v-else>原價10000</div>
+        <div v-if="qty > 10">熱賣中</div>
+        <div v-else-if="qty <= 10 && qty > 0">低庫存</div>
+        <div v-else>補貨中</div>
+    </div>
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return {
+                    onsale: false,
+                    qty: 0
+                }
+            }
+        });
+        app.mount('#app');
+    </script>
+</body>
+</html>
