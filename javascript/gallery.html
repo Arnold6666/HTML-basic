@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .thumb{
+            width: 100px;
+            border: 5px solid #000;
+            transition: .6s;
+        }
+        .thumb.active{
+            border: 5px solid #f52323;
+            transition: .6s;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <img src="images/pro-1.jpg" alt="" class="picture">
+        <div class="thumbs">
+            <img src="images/pro-1.jpg" alt="" class="thumb active">
+            <img src="images/pro-2.jpg" alt="" class="thumb">
+            <img src="images/pro-3.jpg" alt="" class="thumb">
+            <img src="images/pro-4.jpg" alt="" class="thumb">
+        </div>
+    </div>
+    <script>
+        // let thumb = document.querySelectorAll('.thumb');
+        // for(let th of thumb){
+        //     th.onclick = function(e){
+        //     // console.log(e.target.src); 絕對連結
+        //     // console.log(e.target.getAttribute('src')); 相對連結
+        //     let newImg = e.target.src;
+        //     // let newImg = e.target.getAttribute('src');
+        //     document.querySelector('.picture').setAttribute('src',newImg);
+        //     for(let th of thumb){
+        //         th.classList.remove('active');
+        //     }
+        //     // console.log(th.classList);
+        //     // console.log(e.target.classList);
+        //     // th.classList.add('active');
+        //     e.target.classList.add('active');
+        //     }
+        // }
+        // let thumb = document.querySelectorAll('.thumb');
+        // for(let th of thumb){
+        //     th.onclick = function(e){
+        //         console.log(this);
+        //         let newImg = this.getAttribute('src');
+        //         document.querySelector('.picture').setAttribute('src',newImg);
+        //         for(let th of thumb){
+        //             th.classList.remove('active');
+        //         }
+        //         this.classList.add('active');
+        //     }
+        // }
+        let thumb = document.querySelectorAll('.thumb');
+        for(let th of thumb){
+            th.onclick = e => {
+                console.log(this);
+                let newImg = e.target.getAttribute('src');
+                document.querySelector('.picture').setAttribute('src',newImg);
+                for(let th of thumb){
+                    th.classList.remove('active');
+                }
+                e.target.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
