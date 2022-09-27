@@ -34,7 +34,11 @@
         <button v-on:click="add()">新增事項</button>
         <div>{{test}}</div>
         <ul class="todos">
-            <li class="todo-item" v-for="(todo,idx) of todos">{{todo.name}} 
+            <li 
+                class="todo-item" 
+                v-for="(todo,idx) of todos" 
+                v-bind:class="{completed:todo.completed}" 
+                @click="todo.completed = !todo.completed">{{todo.name}}
                 <span class="del" @click="del(idx)">刪除</span>
             </li>
         </ul>
@@ -73,6 +77,9 @@
                     this.todos.splice(idx,1);
                     // console.log(idx)
                 }
+                // completed(idx){
+                //     this.todos[idx].completed = !this.todos[idx].completed
+                // }
             }
         });
         app.mount('#app')

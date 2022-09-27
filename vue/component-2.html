@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #0af;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <app-title></app-title>
+        <app-desc></app-desc>
+        <app-test></app-test>
+        <app-box></app-box>
+    </div>
+    <!-- 利用template 建立可用javascript重複使用的組件 -->
+    <template id="box"> 
+        <div class="box">
+
+        </div>
+    </template>
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return{}
+            },
+            components:{
+                appDesc:{
+                    template:`<p>my description</p>`
+                },
+                'app-test':{
+                    template:`<p>test</p>`
+                }
+            }
+        });
+        app.component('app-title',{
+            template:`
+            <div>
+                <h1>Hello component!</h1>
+                <p>lorem</p>
+            </div>
+            `
+        });
+        app.component('app-box',{
+            template:'#box'
+        })
+        app.mount('#app');
+    </script>
+</body>
+</html>

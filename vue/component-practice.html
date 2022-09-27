@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@next"></script>
+    <style>
+        li{
+            list-style: none;
+        }
+        .colorBox{
+            width: 50px;
+            height: 50px;
+        }
+        .prods {
+            display: flex;
+        }
+        .prods li{
+            border: 1px solid #232323;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h2>{{title}}{{color}}</h2>
+        <img :src="image" style="width: 100%;">
+        <ul>
+            <li v-for="inbox of inBoxes">{{inbox}}</li>
+        </ul>
+        <ul class="prods">
+            <li @click="changeIndex(idx)" v-for="(prod,idx) of products" class="colorBox" :style="{backgroundColor:prod.color}">
+            </li>
+        </ul>
+        <ul class="prods">
+            <li @click="changeIndex(idx)" v-for="(prod,idx) of products">
+                <img :src="prod.image" width= "100">
+            </li>
+        </ul>
+    </div>
+    <script>
+         const app = Vue.createApp({
+            data(){
+                return {
+                    title: 'iPhone 12',
+                    // image: 'images/iphone-12-finish-select-202207-black.jfif',
+                    inBoxes:['iPhone','USB-C 對 Lightning 連接線'],
+                    currentIndex:0,
+                    products:[
+                        {
+                            id:1,
+                            image:'images/iphone-12-finish-select-202207-black.jfif',
+                            colorName:'黑色',
+                            color:'#000'
+                        },
+                        {
+                            id:2,
+                            image: 'images/iphone-12-finish-select-202207-blue.jfif',
+                            colorName:'藍色',
+                            color:'#00f'
+                        },
+                        {
+                            id:3,
+                            image:'images/iphone-12-finish-select-202207-green.jfif',
+                            colorName:'綠色',
+                            color:'#5a0'
+                        },
+                        {
+                            id:4,
+                            image:'images/iphone-12-finish-select-202207-product-red.jfif',
+                            colorName:'紅色',
+                            color:'#f00'
+                        },
+                        {
+                            id:5,
+                            image:'images/iphone-12-finish-select-202207-white.jfif',
+                            colorName:'白色',
+                            color:'#eee'
+                        }
+                    ]
+                }
+            },
+            methods:{
+                changeIndex(idx){
+                    this.currentIndex = idx;
+                }
+            },
+            computed:{
+                productIndex(){
+                    return this.products[this.currentIndex];
+                },
+                color(){
+                    return this.productIndex.colorName;
+                },
+                image(){
+                    return this.productIndex.image;
+                }
+            }
+        });
+        app.mount('#app');
+    </script>
+</body>
+</html>

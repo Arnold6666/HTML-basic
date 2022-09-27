@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: #ff0000;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="app">
+        <app-title v-bind:test="title" :user="admin"></app-title>
+        <app-btn @add-number="addNumber"></app-btn>
+        <h1>{{number}}</h1>
+    </div>
+    <!-- 利用template 建立可用javascript重複使用的組件 -->
+    <template id="box"> 
+        <div class="box">
+
+        </div>
+    </template>
+    <script>
+        const app = Vue.createApp({
+            data(){
+                return{
+                    title:"Hello vue!!",
+                    admin: 'john',
+                    number:0
+                }
+            },
+            methods:{
+                addNumber(v){
+                    this.number+=v
+                }
+            }
+        });
+        app.component('app-title',{
+            props:['test','user'],
+            template:`
+            <div>
+                <h1>{{test}} {{user}}</h1>
+            </div>
+            `,
+        });
+        app.component('app-btn',{
+            template:`<button @click="add()">click</button>`,
+            methods:{
+                add(){
+                    this.$emit('add-number',10);
+                }
+            }
+        })
+        app.mount('#app');
+    </script>
+</body>
+</html>
