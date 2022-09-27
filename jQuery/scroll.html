@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.compat.min.css" integrity="sha512-b42SanD3pNHoihKwgABd18JUZ2g9j423/frxIP5/gtYgfBz/0nDHGdY/3hi+3JwhSckM3JLklQ/T6tJmV7mZEw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <style>
+        *{
+           margin: 0; 
+           padding: 0;
+           font-family: 'Segoe UI';
+        }
+        nav{
+            position: fixed;
+            display: flex;
+            width: 100%;
+            height: 70px;
+            align-items: center;
+            justify-content: center;
+            background-color: #222;
+            transition: .5s;
+        }
+        nav a{
+            color: #fff;
+            text-decoration: none;
+            line-height: 50px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        nav.active{
+            background-color: #7cfffb;
+            height: 50px;
+        }
+        nav.active a{
+            color: #000000;
+        }
+        nav a.active{
+            color: red;
+        }
+        #about, #service, #contact, #product{
+            width: 100%;
+            height: 100vh;
+        }
+        #about{
+            background-color: #fa7878;
+        }
+        #service{
+            background-color: #fae678;
+        }
+        #product{
+            background-color: #78fa8e;
+        }
+        #contact{
+            background-color: #78acfa;
+        }
+        #gotop{
+            display: inline-block;
+            width: 50px;
+            line-height: 50px;
+            background-color: #222;
+            color: #fff;
+            text-decoration: none;
+            position: fixed;
+            right: 15px;
+            bottom: 15px;
+            text-align: center;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#" data-target="#about" class="active">ABOUT</a>
+        <a href="#" data-target="#service" class="">SERVICE</a>
+        <a href="#" data-target="#product" class="">PRODUCT</a>
+        <a href="#" data-target="#contact" class="">CONTACT</a>
+    </nav>
+    <div id="about"></div>
+    <div id="service"></div>
+    <div id="product"></div>
+    <div id="contact"></div>
+    <a href="#" id="gotop">TOP</a>
+    <script>
+        $(function(){
+            $('nav').find('a').click(function(e){
+                e.preventDefault();
+                let target = $(this).data('target');
+                // console.log(target);
+                let offset = $(target).offset().top;
+                // console.log(offset);
+                $('html,body').animate({
+                    scrollTop:offset
+                },600);
+                // $('nav').find('a').removeClass('active');
+                // $(this).addClass('active');
+            });
+            $('#gotop').click(function(e){
+                e.preventDefault();
+                $('html,body').animate({
+                    scrollTop:0
+                },1000);
+                // return false;
+            });
+            $(window).scroll(function(){
+                let h = $(this).scrollTop();
+                // console.log(h);
+                let _in = 'animated rollIn';
+                let _out = 'animated hinge';
+                if(h > 600){
+                    // $('#gotop').show();
+                    // $('#gotop').fadeIn();
+                    $('#gotop').show().removeClass(_out).addClass(_in);
+                    $('nav').addClass('active');
+                }else{
+                    // $('#gotop').hide();
+                    // $('#gotop').fadeOut()
+                    $('#gotop').removeClass(_in).addClass(_out);
+                    $('nav').removeClass('active');
+                };
+                $('nav').find('a').each(function(){
+                    let target = $(this).data('target');
+                    let offset = $(target).offset().top;
+                    console.log(offset);
+                    if(h >= offset - 200){
+                        $('nav').find('a').removeClass('active');
+                        $(this).addClass('active')
+                    }
+                })
+            });
+        })
+    </script>
+</body>
+</html>

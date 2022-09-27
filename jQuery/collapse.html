@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js" integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .container{
+            width: 600px;
+            margin: auto;
+        }
+        h2{
+            background-color: rgb(230, 250, 126);
+            padding: 10px;
+            border-bottom: 3px solid #000000;
+        }
+        p{
+            background-color: rgb(79, 241, 219);
+            padding: 10px;
+            display: none;
+        }
+    </style>
+    <script>
+        // $(document).ready(function(){
+        //     // $('h2').hover(function(){
+        //     $('h2').click(function(){
+        //         $(this).next().stop().slideToggle(600);
+        //     })
+        // });
+
+        // $(function(){
+        //     $('h2').click(function(){
+        //         $(this).next().stop().slideToggle(600);
+        //     });
+        // })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h2>title</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, molestias dolorem vitae tempore, tempora aliquid accusamus, animi optio amet dignissimos similique deleniti ratione facilis consequatur voluptatibus. Exercitationem perferendis animi veniam?</p>
+        <h2>title</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, molestias dolorem vitae tempore, tempora aliquid accusamus, animi optio amet dignissimos similique deleniti ratione facilis consequatur voluptatibus. Exercitationem perferendis animi veniam?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, molestias dolorem vitae tempore, tempora aliquid accusamus, animi optio amet dignissimos similique deleniti ratione facilis consequatur voluptatibus. Exercitationem perferendis animi veniam?
+        </p>
+        <h2>title</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, molestias dolorem vitae tempore, tempora aliquid accusamus, animi optio amet dignissimos similique deleniti ratione facilis consequatur voluptatibus. Exercitationem perferendis animi veniam?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, molestias dolorem vitae tempore, tempora aliquid accusamus, animi optio amet dignissimos similique deleniti ratione facilis consequatur voluptatibus. Exercitationem perferendis animi veniam?
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, molestias dolorem vitae tempore, tempora aliquid accusamus, animi optio amet dignissimos similique deleniti ratione facilis consequatur voluptatibus. Exercitationem perferendis animi veniam?
+        </p>
+    </div>
+    <script>
+        // $(document).ready(function(){
+        //     // $('h2').hover(function(){
+        //     $('h2').click(function(){
+        //         $(this).next().stop().slideToggle(600);
+        //     })
+        // });
+        $('h2').click(function(){
+                $(this).next().stop().slideToggle(600);
+            })
+    </script>
+</body>
+</html>
