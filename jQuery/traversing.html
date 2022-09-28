@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>title</h1>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut pariatur veritatis sunt quod iste animi, dolorum totam architecto repellendus assumenda saepe harum incidunt enim iusto nihil nostrum maiores repellat accusamus!
+        </p>
+        <ul class="items">
+            <li class="item"><a href="#">list 1</a></li>
+            <li class="item"><a href="#">list 2</a></li>
+            <li class="item"><a href="#">list 3</a></li>
+            <li class="item"><a href="#">list 4</a></li>
+            <li class="item"><a href="#">list 5</a></li>
+        </ul>
+    </div>
+    <script>
+        $(function(){
+            // let e = $('.items').parent();
+            // let e = $('.items').parents();
+            // let e = $('.items').parents('body');
+
+            // let e = $('.items').next();
+            // let e = $('.items').prev();
+            // let e = $('.items').siblings(); //同輩元素
+            // let e = $('.item').eq(4).text(); //同輩且相同的元素
+
+            // let e = $('.items').find('a');//所有後代元素皆可找到
+            let e = $('.container').children();//僅有.items的子輩
+
+            console.log(e);
+        })
+    </script>
+</body>
+</html>
