@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .container{
+            display: flex;
+            width: 1000px;
+            height: 800px;
+            margin: auto;
+            flex-direction: row;
+            /* flex-wrap: wrap; */
+            justify-content: center;
+            align-items: center;
+            /* flex-start, flex-end, center, stretch, baseline */
+            background-image: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);
+        }
+        .box{
+            /* width: calc(100%/5); */
+            /* flex-basis: 400px; */
+            padding: 10px;
+            /* background-image: linear-gradient( 135deg, #FEB692 10%, #EA5455 100%); */
+        }
+        .box:nth-of-type(1){
+            background-image: linear-gradient( 135deg, #FDEB71 10%, #F8D800 100%);
+            /* flex-grow: 1; */
+            /* flex-shrink: 10; */
+            /* flex: 0 0 25%; */
+            /* flex: grow shrink basis; */
+            width: 25%;
+            flex-grow: 0;
+            flex-shrink: 0;
+        }
+        .box:nth-of-type(2){
+            background-image: linear-gradient( 135deg, #CE9FFC 10%, #7367F0 100%);
+            /* flex-grow: 1; */
+            /* flex-shrink: 1; */
+            flex: 1 0 200px;
+            
+        }
+        .box:nth-of-type(3){
+            background-image: linear-gradient( 135deg, #90F7EC 10%, #32CCBC 100%);
+            /* flex-grow: 1; */
+            /* flex-shrink: 1; */
+            flex: 1 0 200px;
+            order: 2;
+        }
+        .box:nth-of-type(4){
+            background-image: linear-gradient( 135deg, #FCCF31 10%, #F55555 100%);
+            order: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box">
+            <h2>title 1</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo beatae inventore aliquam a. Laudantium obcaecati soluta nobis quas maxime exercitationem!</p>
+        </div>
+        <div class="box">
+            <h2>title 2</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo beatae inventore aliquam a. Laudantium obcaecati soluta nobis quas maxime exercitationem!</p>
+        </div>
+        <div class="box">
+            <h2>title 3</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo beatae inventore aliquam a. Laudantium obcaecati soluta nobis quas maxime exercitationem!</p>
+        </div>
+        <!-- <div class="box">
+            <h2>title 4</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo beatae inventore aliquam a. Laudantium obcaecati soluta nobis quas maxime exercitationem!</p>
+        </div> -->
+    </div>
+</body>
+</html>

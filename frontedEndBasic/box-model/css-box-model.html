@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=div, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: #fa0;
+            margin: 30px;/*外距上下會重疊,為元素外距離*/
+            border-color: red;
+            border-width: 10px;
+            border-style: solid;
+            /* border: red solid 10px; */
+            padding: 15px;/*內距為元素內距離'*/
+            display: inline;/*轉行內後取消寬高設定*/
+        }
+        span{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!--開發者模式：橘色為margin, 綠色為padding, 藍色為內容-->
+    <div>block</div>
+    <div>block</div>
+    <!--行內元素外距只有左右會呈現, 內距/border上下會呈現但是不推擠空間, 左右會呈現並展開-->
+    <span>inline</span>
+    <span>inline</span>
+    <span>inline</span>
+</body>
+</html>

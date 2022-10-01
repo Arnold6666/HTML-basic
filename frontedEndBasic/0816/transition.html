@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 200px;
+            margin: 50px;
+            background-color: rgb(235, 70, 70);
+            transition: width 1s 0s, height 1s 1s, background-color 1s 2s;
+            /* transition-duration: 1s;
+            transition-property: width, height,background-color;
+            transition-delay: 0s, 1s ,2s; */
+        }
+
+        .container .box1 {
+            /* transition: 1s ease; */
+            transition-duration: 1s;
+            transition-timing-function: ease;
+        }
+
+        .container .box2 {
+            /* transition: 1s ease-in; */
+            transition-duration: 1s;
+            transition-timing-function: ease-in;
+        }
+
+        .container .box3 {
+            /* transition: 1s ease-out; */
+            transition-duration: 1s;
+            transition-timing-function: ease-out;
+        }
+
+        .container .box4 {
+            /* transition: 1s ease-in-out; */
+            transition-duration: 1s;
+            transition-timing-function: ease-in-out;
+        }
+
+        .container .box5 {
+            /* transition: 1s linear; */
+            transition-duration: 1s;
+            transition-timing-function: linear;
+        }
+        .container .box6 {
+            /* transition: 1s linear; */
+            transition-duration: 5s;
+            transition-timing-function: cubic-bezier(0,-0.63,.94,1.54);
+        }
+
+        .container:hover .box {
+            width: 600px;
+            background-color: #fce306;
+        }
+        /* transition: rpoperty duration delays timing-function */
+    </style>
+</head>
+
+<body>
+    <!-- 
+        transition
+        trsnsform
+        animation
+     -->
+    <h1>Transtion</h1>
+    <div class="container">
+        <div class="box box1">ease</div>
+        <div class="box box2">ease-in</div>
+        <div class="box box3">ease-out</div>
+        <div class="box box4">ease-in-out</div>
+        <div class="box box5">linear</div>
+        <div class="box box6">cubic-bezier</div>
+    </div>
+
+</body>
+
+</html>

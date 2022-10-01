@@ -1,0 +1,104 @@
+
+ * {
+    box-sizing: border-box;
+ }
+img{
+    width: 100%;
+ }
+.full-width{
+    width: 100%;
+}
+.fixed-width{
+    width: 1000px;
+    margin: auto;
+}
+.row{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.col {
+    flex: 1 0 0;
+}
+.col-1{
+    flex: 0 0 calc(100% / 12 * 1);
+}
+.col-2{
+    flex: 0 0 calc(100% / 12 * 2);
+}
+.col-3{
+    flex: 0 0 calc(100% / 12 * 3);
+}
+.col-4{
+    flex: 0 0 calc(100% / 12 * 4);
+}
+.col-5{
+    flex: 0 0 calc(100% / 12 * 5);
+}
+.col-6{
+    flex: 0 0 calc(100% / 12 * 6);
+}
+.col-7{
+    flex: 0 0 calc(100% / 12 * 7);
+}
+.col-8{
+    flex: 0 0 calc(100% / 12 * 8);
+}
+.col-9{
+    flex: 0 0 calc(100% / 12 * 9);
+}
+.col-10{
+    flex: 0 0 calc(100% / 12 * 10);
+}
+.col-11{
+    flex: 0 0 calc(100% / 12 * 11);
+}
+.col-12{
+    flex: 0 0 calc(100% / 12 * 12);
+}
+/* 屬性選取器 */
+/* *:全部 */
+[class*="col"]{
+    padding: 15px;
+}
+/* ^: 開頭為 */
+/* [class^="col"]{
+    padding: 15px;
+} */
+/* $:結尾 */
+/* [class$="col"]{
+    padding: 15px;
+} */
+.no-padding{
+    padding: 0;
+}
+.p-0{
+    padding: 0;
+}
+.p-1{
+    padding: 5px;
+}
+.p-2{
+    padding: 10px;
+}
+.pt-0{
+    padding-top: 0;
+}
+.pt-1{
+    padding-top: 5px;
+}
+.pt-2{
+    padding-top: 10px;
+}
+.pr-0{
+    padding-right: 0;
+}
+.pr-1{
+    padding-right: 5px;
+}
+.pr-2{
+    padding-right: 10px;
+}
+.justify-content-center{
+    justify-content: center;
+}

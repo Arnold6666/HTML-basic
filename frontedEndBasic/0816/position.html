@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* body{
+            height: 2000px;
+        } */
+        .container{
+            width: 800px;
+            height: 600px;
+            background-color: #ccc;
+            position: relative;
+        }
+        .box{
+            background-color: #123;
+            width: 100px;
+            height: 100px;
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            /* top, bottom, left, right */
+            /* z-index: 11; */
+        }
+        .box2{
+            background-color: #a12;
+            width: 200px;
+            height: 200px;
+            /* position: relative; */
+            /* z-index: 10; */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+    <div class="box"></div>
+    <div class="box2"></div>
+        <!-- 
+            靜態定位 static
+            相對定位 relative 可以自己為基準，調整上下左右
+            絕對定位 absolute 自成一塊 不受別人影響也不影響別人，設定上下左右位置時，會以視窗為基準，但父元素為相對定位時，可受到父元素控制位置
+            固定定位 fixed 完全以視窗為基準
+            黏性定位 sticky
+         -->
+</body>
+</html>
